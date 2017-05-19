@@ -49,7 +49,7 @@ namespace :nginx do
     desc "#{action.capitalize} Nginx"
     task action.to_sym => :environment do
       comment %(#{action.capitalize} Nginx)
-      command "sudo service nginx #{action}"
+      command "/etc/init.d/nginx #{action}"
     end
   end
 
