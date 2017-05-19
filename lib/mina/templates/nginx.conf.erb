@@ -8,7 +8,7 @@ upstream <%= application %> {
 server {
   listen 80 default deferred;
   server_name <%= fetch :server_name, fetch(:domain) %>
-  root <%= "#{fetch :deploy_to}/#{fetch :current_path}/public" %>;
+  root <%= "#{fetch :deploy_to}/current/public" %>;
 
   location ^~ /assets/ {
     gzip_static on;
