@@ -8,7 +8,7 @@ namespace :nginx do
   set :nginx_path,        '/etc/nginx'
   set :nginx_config,      -> { "#{fetch(:shared_path)}/config/nginx.conf" }
   set :nginx_config_e,    -> { "#{fetch(:nginx_path)}/sites-enabled/#{application}.conf" }
-  set :nginx_socket_path, -> { "#{fetch(:shared_path)}/tmp/puma.sock" }
+  set :nginx_socket_path, -> { "#{fetch(:shared_path)}/tmp/sockets/puma.sock" }
 
   desc 'Install Nginx config to repo'
   task :install => :environment do
